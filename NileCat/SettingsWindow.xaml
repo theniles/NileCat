@@ -1,0 +1,27 @@
+﻿<Window x:Class="NileCat.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NileCat"
+        mc:Ignorable="d" Icon="assets/catIco.png"
+        Title="NileCat Settings" Height="170" Width="200" ResizeMode="CanMinimize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Vertical">
+            <TextBlock Margin="1,1,1,1">HTTP Server URL running NileCat</TextBlock>
+            <TextBox x:Name="serverTb" Margin="1,1,1,1"></TextBox>
+            <ToggleButton Margin="1,1,1,1" Name="catPopupBtn">
+                Toggle popup cats
+            </ToggleButton>
+            <TextBlock Margin="1,1,1,1">Popup interval in minutes</TextBlock>
+            <Slider x:Name="minuteSlider" Margin="1,1,1,1" TickFrequency="1" IsSnapToTickEnabled="True" ToolTip="{Binding ElementName=minuteSlider, Path=Value}" Minimum="1" Maximum="10"/>
+            <Button Click="Button_Click" Margin="1,1,1,1">Apply settings</Button>
+        </StackPanel>
+    </Grid>
+</Window>
